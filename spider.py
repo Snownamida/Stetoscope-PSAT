@@ -14,7 +14,12 @@ OUTPUT_FILE_NAME = 'data.json' # 完整的聚合数据文件名
 IMAGE_DIR_BASE = '.' # 图片和JSON保存的根目录，即脚本运行目录
 
 # 新增：需要处理的 job_id 列表
-JOB_IDS_TO_PROCESS = ['559', '560', '561' ,'577', '579', '587', '572', '210', '220', '510', '548'] 
+JOB_IDS_TO_PROCESS = [
+    # Classement des résultats
+    '210', '220','230','559', '560', '561' ,"563","572",'577', '579', '587', 
+    # Compteurs
+    '510', '548',"589",
+    ] 
 
 # 登录账户信息
 LOGIN_PAYLOAD = {
