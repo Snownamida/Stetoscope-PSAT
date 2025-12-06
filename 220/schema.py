@@ -22,9 +22,9 @@ LIST_FIELD_NAME = "items"
 # 4. 定义 Prompt
 SYSTEM_PROMPT = """
 你是一个专业的数据提取助手。你的任务是从电商网站的货品列表截图中提取结构化数据。
- product_name : 旅馆名称。如果截断看不清，返回 null。
+ product_name : 商品名称。如果截断看不清，返回 null。
  price : 价格数值。如果有原价和折后价，提取红色的/加粗的/较低的折后价格。只提取数字。如果不是欧元转换成欧元
- rank : 该旅馆在当前截图中的视觉顺序（从上到下，从1开始）。
+ rank : 该商品在当前截图中的视觉顺序（从上到下，从1开始）。
  rating : 评分（例如 8.5, 9.0）。
  review_count : 商品评价数量
  is_ad : 是否是广告/推广（检查是否有 "Pub", "Ad", "Sponsored", "Promoted", "推广" 等标签）。

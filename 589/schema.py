@@ -7,9 +7,7 @@ class ItemModel(BaseModel):
     rank: int
     product_name: Optional[str]
     price: Optional[float]
-    rating: Optional[float]
-    review_count:Optional[int]
-    is_ad: bool
+    stock_count:Optional[int]
 
 # 2. 定义整体响应模型 (ResponseModel)
 class ResponseModel(BaseModel):
@@ -25,9 +23,7 @@ SYSTEM_PROMPT = """
  product_name : 商品名称。如果截断看不清，返回 null。
  price : 价格数值。如果有原价和折后价，提取红色的/加粗的/较低的折后价格。只提取数字。如果不是欧元转换成欧元
  rank : 该商品在当前截图中的视觉顺序（从上到下，从1开始）。
- rating : 评分（例如 8.5, 9.0）。
- review_count : 商品评价数量
- is_ad : 是否是广告/推广（检查是否有 "Pub", "Ad", "Sponsored", "Promoted", "推广" 等标签）。
+ stock_count : 商品库存（例如Only 6 left in stock）
 """
 
 USER_PROMPT_TEXT = "请提取这张图中的所有商品信息"

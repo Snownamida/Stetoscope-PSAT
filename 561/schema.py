@@ -9,7 +9,6 @@ class ItemModel(BaseModel):
     price: Optional[float]
     rating: Optional[float]
     review_count:Optional[int]
-    is_ad: bool
 
 # 2. 定义整体响应模型 (ResponseModel)
 class ResponseModel(BaseModel):
@@ -27,7 +26,6 @@ SYSTEM_PROMPT = """
  rank : 该商品在当前截图中的视觉顺序（从上到下，从1开始）。
  rating : 评分（例如 8.5, 9.0）。
  review_count : 商品评价数量
- is_ad : 是否是广告/推广（检查是否有 "Pub", "Ad", "Sponsored", "Promoted", "推广" 等标签）。
 """
 
 USER_PROMPT_TEXT = "请提取这张图中的所有商品信息"
