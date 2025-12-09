@@ -1,3 +1,4 @@
 *.jpg
 .env
 __pycache__
+desktop.ini
