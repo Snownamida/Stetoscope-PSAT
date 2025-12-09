@@ -8,7 +8,6 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 from openai import OpenAI
-from pydantic import BaseModel
 
 # ================= 配置 =================
 MODEL_NAME = "gpt-5-mini"
@@ -167,6 +166,8 @@ def process_directory(directory):
                 
                 parsed_result = response.choices[0].message.parsed
                 items_list = getattr(parsed_result, schema.LIST_FIELD_NAME, [])
+                if getattr(schema, "SINGLE_ITEM",False):
+                    items_list=[items_list]
                 
                 item_count = 0
                 if items_list:
