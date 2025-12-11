@@ -9,6 +9,7 @@ class ItemModel(BaseModel):
     price: Optional[float]
     rating: Optional[float]
     sold_count:Optional[int]
+    discount: Optional[float]
 
 # 2. 定义整体响应模型 (ResponseModel)
 class ResponseModel(BaseModel):
@@ -26,6 +27,7 @@ SYSTEM_PROMPT = """
  rank : 该商品在当前截图中的视觉顺序（从上到下，从1开始）。
  rating : 评分（例如 8.5, 9.0）。
  sold_count : 商品销售数量
+ discount : 折扣（如果有的话，提取折扣百分比，如果是-15%就是0.15）。
 """
 
 USER_PROMPT_TEXT = "请提取这张图中的所有商品信息"
